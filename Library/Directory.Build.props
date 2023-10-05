@@ -4,8 +4,9 @@
   <!-- Package related stuff -->
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1;net46;net48;net6.0;net7.0</TargetFrameworks>
-	<GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild>
-	<PackageId>LTRData.$(MSBuildProjectName)</PackageId>
+    <!-- For some reason this skips the build step of dotnet pack, classic Microsoft quality, see https://github.com/dotnet/sdk/issues/12160 -->
+    <!-- <GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild> -->
+    <PackageId>JCRCI.LTRData.$(MSBuildProjectName)</PackageId>
     <PackageOutputPath>$(LocalNuGetPath)</PackageOutputPath>
     <PackageVersion>$(FileVersion)</PackageVersion>
     <PackageReadmeFile>README.md</PackageReadmeFile>
